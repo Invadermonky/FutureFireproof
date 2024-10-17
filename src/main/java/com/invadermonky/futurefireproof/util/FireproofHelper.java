@@ -13,10 +13,10 @@ public class FireproofHelper {
     }
 
     public static int getLavaDecayRate(ItemStack stack) {
-        if(stack.getItem() instanceof IFireproofItem) {
-            return ((IFireproofItem) stack.getItem()).getPerTickLavaDecay();
-        } else if((ConfigHandlerFF.enableFireproofEnchant && EnchantmentHelper.getEnchantmentLevel(RegistrarFF.ENCHANTMENT_FIREPROOF, stack) > 0)) {
+        if((ConfigHandlerFF.enableFireproofEnchant && EnchantmentHelper.getEnchantmentLevel(RegistrarFF.ENCHANTMENT_FIREPROOF, stack) > 0)) {
             return 1;
+        } else if(stack.getItem() instanceof IFireproofItem) {
+            return ((IFireproofItem) stack.getItem()).getPerTickLavaDecay();
         } else {
             return ModTags.getFireproofDecayRate(stack);
         }

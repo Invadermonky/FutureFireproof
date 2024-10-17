@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
 public class EntityFireproofItem extends EntityItem {
-    private int lavaDecay;
+    protected int lavaDecay;
 
     public EntityFireproofItem(World worldIn, double x, double y, double z) {
         super(worldIn, x, y, z);
@@ -43,7 +43,7 @@ public class EntityFireproofItem extends EntityItem {
         this.motionZ = entityItem.motionZ;
         NBTTagCompound tag = new NBTTagCompound();
         entityItem.writeToNBT(tag);
-        this.setPickupDelay(tag.getShort("PickupDelay"));
+        this.readEntityFromNBT(tag);
         this.lavaDecay = 0;
     }
 
@@ -174,7 +174,7 @@ public class EntityFireproofItem extends EntityItem {
         }
     }
 
-    private void floatInLava() {
+    protected void floatInLava() {
         this.motionX *= 0.95;
         this.motionY += this.motionY < 0.06 ? 5.0e-4 : 0.0;
         this.motionZ *= 0.95;
@@ -187,7 +187,7 @@ public class EntityFireproofItem extends EntityItem {
         }
     }
 
-    private boolean combineItems(EntityFireproofItem other) {
+    protected boolean combineItems(EntityFireproofItem other) {
         if (other == this) {
             return false;
         } else if (other.isEntityAlive() && this.isEntityAlive()) {
@@ -231,7 +231,7 @@ public class EntityFireproofItem extends EntityItem {
         }
     }
 
-    private boolean handleLavaMovement() {
+    protected boolean handleLavaMovement() {
         if(this.world.handleMaterialAcceleration(this.getEntityBoundingBox(), Material.LAVA, this)) {
             this.motionX *= 0.75f;
             this.motionZ *= 0.75f;
