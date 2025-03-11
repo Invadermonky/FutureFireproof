@@ -1,5 +1,7 @@
 package com.invadermonky.futurefireproof.entity;
 
+import com.invadermonky.futurefireproof.config.ConfigHandlerFF;
+import com.invadermonky.futurefireproof.config.ModTags;
 import com.invadermonky.futurefireproof.util.FireproofHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -158,20 +160,20 @@ public class EntityFireproofItem extends EntityItem {
         if(this.isEntityInvulnerable(source)) {
             return false;
         } else if(!this.getItem().isEmpty()) {
-            if(source.isExplosion()) {
-                return this.getItem().getItem() != Items.NETHER_STAR;
+            if(source.isExplosion() && (this.getItem().getItem() == Items.NETHER_STAR || ConfigHandlerFF.explosionImmunity)) {
+                return false;
             } else if(source.isFireDamage()) {
                 return false;
+            } if(ModTags.isIgnoredDamageType(source)) {
+                return false;
             }
-            return false;
-        } else {
-            this.markVelocityChanged();
-            this.health = (int)((float) this.health - amount);
-            if(this.health <= 0) {
-                this.setDead();
-            }
-            return false;
         }
+        this.markVelocityChanged();
+        this.health = (int)((float) this.health - amount);
+        if(this.health <= 0) {
+            this.setDead();
+        }
+        return false;
     }
 
     protected void floatInLava() {

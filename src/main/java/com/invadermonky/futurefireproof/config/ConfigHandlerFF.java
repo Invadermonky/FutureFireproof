@@ -13,6 +13,15 @@ public class ConfigHandlerFF {
     @Config.Comment("Enables the Fireproof item enchant.")
     public static boolean enableFireproofEnchant = true;
 
+    @Config.Comment("Fireproof Items will gain immunity to any damage source added here.\n" +
+            "Example:\n" +
+            "  cactus\n" +
+            "  lightningBolt")
+    public static String[] damageTypes = new String[] {};
+
+    @Config.Comment("Set to true to make Fireproof Items immune to explosions.")
+    public static boolean explosionImmunity = false;
+
     @Config.Comment("Items that will be considered fireproof.\n" +
             "Format: <modid>:<itemid>:[meta]=[decayrate]\n" +
             "  modid:itemid (required) - the item id\n" +
