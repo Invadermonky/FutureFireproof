@@ -2,6 +2,7 @@
 
 ## 1.12.2-1.2.1
 - Fixed a bug cause 50 levels of fireproof enchantment to be registered
+- Fireproof enchant can now be applied at high enchantment power levels (It can appear on level 30 item enchants)
 
 ## 1.12.2-1.2.0
 - Added configuration option to make fireproof items immune to specific types of damage
