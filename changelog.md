@@ -1,5 +1,8 @@
 # Future Fireproof Changelog
 
+## 1.12.2-1.2.1
+- Fixed a bug cause 50 levels of fireproof enchantment to be registered
+
 ## 1.12.2-1.2.0
 - Added configuration option to make fireproof items immune to specific types of damage
 - Added configuration option to make fireproof items immune to explosions

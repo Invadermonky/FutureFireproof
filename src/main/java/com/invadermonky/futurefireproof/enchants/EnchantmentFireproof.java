@@ -22,12 +22,12 @@ public class EnchantmentFireproof extends Enchantment {
     }
 
     @Override
-    public int getMinLevel() {
+    public int getMinEnchantability(int enchantmentLevel) {
         return 12;
     }
 
     @Override
-    public int getMaxLevel() {
+    public int getMaxEnchantability(int enchantmentLevel) {
         return 50;
     }
 }
