@@ -21,15 +21,15 @@ public class RegistrarFF {
 
     @SubscribeEvent
     public static void registerEnchants(RegistryEvent.Register<Enchantment> event) {
-        if(ConfigHandlerFF.enableFireproofEnchant) {
+        if (ConfigHandlerFF.enableFireproofEnchant) {
             event.getRegistry().register(ENCHANTMENT_FIREPROOF);
         }
     }
 
     public static void registerEntities() {
-        if(isRealDropsLoaded) {
+        if (isRealDropsLoaded) {
             Class<? extends EntityItem> entityClass = EntityFireproofItemLootHandler.getEntityFireproofLootItemClass();
-            if(entityClass != null) {
+            if (entityClass != null) {
                 EntityRegistry.registerModEntity(
                         new ResourceLocation(FutureFireproof.MOD_ID, "fireproof_item_loot"),
                         entityClass,

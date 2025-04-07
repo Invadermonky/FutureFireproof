@@ -32,8 +32,8 @@ public class ModTags {
 
         DAMAGE_TYPES.addAll(Arrays.asList(ConfigHandlerFF.damageTypes));
 
-        for(String str : ConfigHandlerFF.fireproofItems) {
-            if(str.matches(".+=[0-9]+")) {
+        for (String str : ConfigHandlerFF.fireproofItems) {
+            if (str.matches(".+=[0-9]+")) {
                 String[] split = str.split("=");
                 FIREPROOF_ITEMS.put(split[0], MathHelper.clamp(Integer.parseInt(split[1]), 1, 6000));
             } else {

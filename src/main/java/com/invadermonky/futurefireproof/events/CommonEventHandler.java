@@ -17,22 +17,22 @@ public class CommonEventHandler {
     @SubscribeEvent
     public static void onEntityJoinWorld(EntityJoinWorldEvent event) {
         World world = event.getWorld();
-        if(RegistrarFF.isRealDropsLoaded && (event.getEntity().getClass() == EntityItem.class || event.getEntity().getClass().toString().equals("realdrops.entities.EntityItemLoot"))) {
+        if (RegistrarFF.isRealDropsLoaded && (event.getEntity().getClass() == EntityItem.class || event.getEntity().getClass().toString().equals("realdrops.entities.EntityItemLoot"))) {
             EntityItem entityItem = (EntityItem) event.getEntity();
             ItemStack stack = entityItem.getItem();
-            if(!stack.isEmpty() && FireproofHelper.isFireproofItem(stack)) {
+            if (!stack.isEmpty() && FireproofHelper.isFireproofItem(stack)) {
                 EntityItem fireproofItem = EntityFireproofItemLootHandler.getEntityItem(entityItem);
-                if(fireproofItem != null) {
+                if (fireproofItem != null) {
                     event.getWorld().spawnEntity(fireproofItem);
                     entityItem.setDead();
                     return;
                 }
             }
         }
-        if(event.getEntity().getClass() == EntityItem.class) {
+        if (event.getEntity().getClass() == EntityItem.class) {
             EntityItem entityItem = (EntityItem) event.getEntity();
             ItemStack stack = entityItem.getItem();
-            if(!stack.isEmpty() && FireproofHelper.isFireproofItem(stack)) {
+            if (!stack.isEmpty() && FireproofHelper.isFireproofItem(stack)) {
                 EntityFireproofItem fireproofItem = new EntityFireproofItem(world, entityItem, stack);
                 event.getWorld().spawnEntity(fireproofItem);
                 entityItem.setDead();

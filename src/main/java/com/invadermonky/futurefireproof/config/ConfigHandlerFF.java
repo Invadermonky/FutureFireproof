@@ -17,7 +17,7 @@ public class ConfigHandlerFF {
             "Example:\n" +
             "  cactus\n" +
             "  lightningBolt")
-    public static String[] damageTypes = new String[] {};
+    public static String[] damageTypes = new String[]{};
 
     @Config.Comment("Set to true to make Fireproof Items immune to explosions.")
     public static boolean explosionImmunity = false;
@@ -32,13 +32,13 @@ public class ConfigHandlerFF {
             "  minecraft:stick:0\n" +
             "  minecraft:stick=5\n" +
             "  minecraft:stick:0=5")
-    public static String[] fireproofItems = new String[] {};
+    public static String[] fireproofItems = new String[]{};
 
     @Mod.EventBusSubscriber(modid = FutureFireproof.MOD_ID)
     public static class ConfigChangeListener {
         @SubscribeEvent
         public static void onConfigChange(ConfigChangedEvent.OnConfigChangedEvent event) {
-            if(event.getModID().equals(FutureFireproof.MOD_ID)) {
+            if (event.getModID().equals(FutureFireproof.MOD_ID)) {
                 ConfigManager.sync(FutureFireproof.MOD_ID, Config.Type.INSTANCE);
                 ModTags.syncConfig();
             }

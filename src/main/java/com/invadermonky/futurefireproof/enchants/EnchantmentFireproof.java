@@ -17,11 +17,6 @@ public class EnchantmentFireproof extends Enchantment {
     }
 
     @Override
-    public boolean canApply(ItemStack stack) {
-        return !(stack.getItem() instanceof IFireproofItem && ((IFireproofItem) stack.getItem()).getPerTickLavaDecay() <= 1) && super.canApply(stack);
-    }
-
-    @Override
     public int getMinEnchantability(int enchantmentLevel) {
         return 12;
     }
@@ -29,5 +24,10 @@ public class EnchantmentFireproof extends Enchantment {
     @Override
     public int getMaxEnchantability(int enchantmentLevel) {
         return 50;
+    }
+
+    @Override
+    public boolean canApply(ItemStack stack) {
+        return !(stack.getItem() instanceof IFireproofItem && ((IFireproofItem) stack.getItem()).getPerTickLavaDecay() <= 1) && super.canApply(stack);
     }
 }
