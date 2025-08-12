@@ -13,6 +13,14 @@ public class ConfigHandlerFF {
     @Config.Comment("Enables the Fireproof item enchant.")
     public static boolean enableFireproofEnchant = true;
 
+    @Config.RangeInt(min = 0, max = 100)
+    @Config.Comment("The minimum enchantability required to see the Fireproof enchant.")
+    public static int fireproofEnchantMinEnchantability = 12;
+
+    @Config.RangeInt(min = 0, max = 100)
+    @Config.Comment("The maximum enchantability required to see the fireproof enchant.")
+    public static int fireproofEnchantMaxEnchantability = 30;
+
     @Config.Comment("Fireproof Items will gain immunity to any damage source added here.\n" +
             "Example:\n" +
             "  cactus\n" +

@@ -1,4 +1,12 @@
 # Future Fireproof Changelog
+## 1.12.2-1.2.3
+### Added
+- Added config options to adjust Fireproof enchant enchantment table weight
+### Changed
+- Reduced the default enchantment weight for the Fireproof enchant, it should now appear much less
+
+---
+
 ## 1.12.2-1.2.2
 ### Added
 - Added ItemStack sensitive version of IFireproofItem#getLavaDecayRate()

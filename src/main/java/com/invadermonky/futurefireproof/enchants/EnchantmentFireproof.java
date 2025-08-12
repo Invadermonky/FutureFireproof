@@ -2,6 +2,7 @@ package com.invadermonky.futurefireproof.enchants;
 
 import com.invadermonky.futurefireproof.FutureFireproof;
 import com.invadermonky.futurefireproof.api.IFireproofItem;
+import com.invadermonky.futurefireproof.config.ConfigHandlerFF;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -18,12 +19,12 @@ public class EnchantmentFireproof extends Enchantment {
 
     @Override
     public int getMinEnchantability(int enchantmentLevel) {
-        return 12;
+        return ConfigHandlerFF.fireproofEnchantMinEnchantability;
     }
 
     @Override
     public int getMaxEnchantability(int enchantmentLevel) {
-        return 50;
+        return ConfigHandlerFF.fireproofEnchantMaxEnchantability;
     }
 
     @Override
