@@ -25,6 +25,7 @@ public class CommonEventHandler {
                 if (fireproofItem != null) {
                     event.getWorld().spawnEntity(fireproofItem);
                     entityItem.setDead();
+                    event.setCanceled(true);
                     return;
                 }
             }
@@ -36,6 +37,7 @@ public class CommonEventHandler {
                 EntityFireproofItem fireproofItem = new EntityFireproofItem(world, entityItem, stack);
                 event.getWorld().spawnEntity(fireproofItem);
                 entityItem.setDead();
+                event.setCanceled(true);
             }
         }
     }

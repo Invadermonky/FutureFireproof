@@ -1,4 +1,10 @@
 # Future Fireproof Changelog
+## 1.12.2-1.2.4
+### Fixed
+- Fixed a log warning whenever a fireproof item spawned in the world
+
+---
+
 ## 1.12.2-1.2.3
 ### Added
 - Added config options to adjust Fireproof enchant enchantment table weight
